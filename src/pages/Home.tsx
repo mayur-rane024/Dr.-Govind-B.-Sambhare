@@ -6,9 +6,9 @@ import facultyImage from "@/assets/faculty-profile.jpg";
 
 const Home = () => {
   return (
-    <div >
+    <div style={{ fontFamily: "font-2" }}>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 px-4 overflow-hidden" data-scroll-section>
+      <section className="relative pt-20 pb-20 px-4 overflow-hidden" style={{ backgroundImage: "url('/bg2.jpg')" }} data-scroll-section>
         <div className="absolute inset-0 bg-white opacity-5" />
         
         <div className="container mx-auto relative z-10">
@@ -23,9 +23,14 @@ const Home = () => {
               data-scroll-speed="1"
             >
               <div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-                  Dr. G.B. Sambare
+                {/* font-1 for main heading */}
+                <h1 
+                  style={{ fontFamily: "font-1" }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight whitespace-nowrap"
+                >
+                  Dr. Govind.B. Sambare
                 </h1>
+
                 <div className="h-1 w-24 bg-primary rounded-full mb-6" />
               </div>
               
@@ -66,11 +71,17 @@ const Home = () => {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a href="mailto:santosh.sambare@pccoepune.org" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="mailto:santosh.sambare@pccoepune.org"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Mail className="h-4 w-4" />
                   <span>santosh.sambare@pccoepune.org</span>
                 </a>
-                <a href="tel:+919689907628" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="tel:+919689907628"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Phone className="h-4 w-4" />
                   <span>+91 96899 07628</span>
                 </a>
@@ -78,13 +89,15 @@ const Home = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" asChild className="shadow-medium">
-                  <Link to="/experience">
+                  <Link to="/experience" style={{ fontFamily: "font-2" }}>
                     View Experience
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/students">Student Opportunities</Link>
+                  <Link to="/students" style={{ fontFamily: "font-2" }}>
+                    Student Opportunities
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -116,18 +129,15 @@ const Home = () => {
 
       {/* Features Section */}
       <section
-  className="py-20 px-4 bg-secondary/30 bg-cover bg-center bg-no-repeat relative"
-  style={{ backgroundImage: "url('/bg2.jpg')" }}
-  data-scroll-section
->
+        className="py-20 px-4 bg-secondary/30 bg-cover bg-center bg-no-repeat relative"
+        
+        data-scroll-section
+      >
         <div className="container mx-auto">
+          {/* font-1 for section heading */}
           <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            style={{ fontFamily: "font-1" }}
             className="text-3xl md:text-4xl font-bold text-center mb-12"
-            data-scroll
-            data-scroll-speed="0.5"
           >
             What You'll Find Here
           </motion.h2>
@@ -152,23 +162,27 @@ const Home = () => {
                 description: "Find available research projects, collaborate with faculty, and contribute to cutting-edge work.",
                 link: "/students",
               },
-            ].map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                data-scroll
-                data-scroll-speed={`${1 + index * 0.2}`}
-              >
+            ].map((feature) => (
+              <motion.div key={feature.title}>
                 <Link to={feature.link}>
                   <div className="p-6 rounded-lg bg-card hover:shadow-medium transition-all duration-300 h-full group">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4">
                       <feature.icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+
+                    {/* font-1 for card headings */}
+                    <h3
+                      style={{ fontFamily: "font-1" }}
+                      className="text-xl font-semibold mb-3"
+                    >
+                      {feature.title}
+                    </h3>
+
+                    {/* font-2 for descriptions */}
+                    <p
+                      style={{ fontFamily: "font-2" }}
+                      className="text-muted-foreground leading-relaxed"
+                    >
                       {feature.description}
                     </p>
                   </div>
@@ -180,23 +194,30 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4" data-scroll-section>
+      <section className="py-20 px-4" style={{ backgroundImage: "url('/bg2.jpg')" }}data-scroll-section>
         <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <motion.div className="max-w-3xl mx-auto text-center">
+            {/* font-1 for CTA heading */}
+            <h2
+              style={{ fontFamily: "font-1" }}
+              className="text-3xl md:text-4xl font-bold mb-6"
+            >
               Ready to Collaborate?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+
+            {/* font-2 for CTA text */}
+            <p
+              style={{ fontFamily: "font-2" }}
+              className="text-lg text-muted-foreground mb-8"
+            >
               Whether you're a student looking for research opportunities or interested 
               in learning more about our work, we'd love to hear from you.
             </p>
+
             <Button size="lg" asChild>
-              <Link to="/contact">Get in Touch</Link>
+              <Link to="/contact" style={{ fontFamily: "font-2" }}>
+                Get in Touch
+              </Link>
             </Button>
           </motion.div>
         </div>

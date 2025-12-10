@@ -7,6 +7,26 @@ html.has-scroll-smooth {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: "font-1";
+  src: url("/Inter,Playfair_Display/Playfair_Display/PlayfairDisplay-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "font-2";
+  src: url("/Inter,Playfair_Display/Inter/static/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "font-3";
+  src: url("/Inter,Playfair_Display/Inter/static/Inter_18pt-BoldItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+
 html.has-scroll-dragging {
   user-select: none;
 }

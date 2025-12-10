@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -38,40 +38,37 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          
-          {/* LOGO */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-primary-foreground text-primary transition-transform group-hover:scale-110">
-              <GraduationCap className="h-6 w-6" />
-            </div>
-            <span className="font-bold text-lg hidden sm:inline text-primary-foreground">
-              Research Portal
-            </span>
+
+          {/* ✅ TEXT LOGO WITH FONT-2 */}
+          <Link
+            to="/"
+            style={{ fontFamily: "font-2" }}
+            className="font-bold text-xl sm:text-2xl tracking-wide text-primary-foreground"
+          >
+            Dr. G.B.Sambare
           </Link>
 
-          {/* DESKTOP MENU */}
+          {/* ✅ DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <Button
                   variant="ghost"
+                  style={{ fontFamily: "font-2" }}   // ✅ font-2 applied
                   className={cn(
-                    "relative text-primary-foreground hover:text-primary hover:bg-primary-foreground/20 transition-colors",
+                    "relative text-primary-foreground transition-all duration-300",
+                    "hover:bg-primary-foreground hover:backdrop-blur-sm",
                     isActive(item.path) &&
-                      "text-primary bg-primary-foreground font-medium"
+                      "bg-primary-foreground/15 font-medium"
                   )}
                 >
                   {item.name}
-
-                  {isActive(item.path) && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary rounded-full" />
-                  )}
                 </Button>
               </Link>
             ))}
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* ✅ MOBILE MENU BUTTON */}
           <Button
             variant="ghost"
             size="icon"
@@ -82,7 +79,7 @@ export const Navbar = () => {
           </Button>
         </div>
 
-        {/* MOBILE NAVIGATION */}
+        {/* ✅ MOBILE NAVIGATION */}
         {isOpen && (
           <div className="md:hidden pb-4 animate-fade-in bg-primary">
             <div className="flex flex-col gap-1">
@@ -94,10 +91,12 @@ export const Navbar = () => {
                 >
                   <Button
                     variant="ghost"
+                    style={{ fontFamily: "font-2" }}  // ✅ font-2 applied
                     className={cn(
-                      "w-full justify-start text-primary-foreground hover:bg-primary-foreground/20",
+                      "w-full justify-start text-primary-foreground transition-all duration-300",
+                      "hover:bg-primary-foreground/10",
                       isActive(item.path) &&
-                        "bg-primary-foreground text-primary font-medium"
+                        "bg-primary-foreground/20 font-medium"
                     )}
                   >
                     {item.name}
