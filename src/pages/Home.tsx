@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div >
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 px-4 overflow-hidden" data-scroll-section>
+      <section className="relative pt-20 pb-20 px-4 overflow-hidden" style={{ backgroundImage: "url('/bg2.jpg')" }} data-scroll-section>
         <div className="absolute inset-0 bg-white opacity-5" />
         
         <div className="container mx-auto relative z-10">
@@ -117,7 +117,6 @@ const Home = () => {
       {/* Features Section */}
       <section
   className="py-20 px-4 bg-secondary/30 bg-cover bg-center bg-no-repeat relative"
-  style={{ backgroundImage: "url('/bg2.jpg')" }}
   data-scroll-section
 >
         <div className="container mx-auto">
@@ -180,7 +179,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4" data-scroll-section>
+      <section className="py-20 px-4" style={{ backgroundImage: "url('/bg2.jpg')" }} data-scroll-section>
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
